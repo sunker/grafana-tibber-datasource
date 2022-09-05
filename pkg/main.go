@@ -5,7 +5,7 @@ import (
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend/datasource"
 	"github.com/grafana/grafana-plugin-sdk-go/backend/log"
-	"github.com/grafana/grafana-starter-datasource-backend/pkg/tibber"
+	"github.com/grafana/grafana-tibber-datasource/pkg/tibber"
 )
 
 func main() {

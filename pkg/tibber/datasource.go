@@ -83,7 +83,7 @@ func (d *TibberDatasource) query(_ context.Context, pCtx backend.PluginContext, 
 // The main use case for these health checks is the test button on the
 // datasource configuration page which allows users to verify that
 // a datasource is working as expected.
-func (d *TibberDatasource) CheckHealth(_ context.Context, req *backend.CheckHealthRequest) (*backend.CheckHealthResult, error) {
+func (d *TibberDatasource) CheckHealth(context context.Context, req *backend.CheckHealthRequest) (*backend.CheckHealthResult, error) {
 	res := &backend.CheckHealthResult{}
 
 	var status = backend.HealthStatusOk
@@ -99,9 +99,11 @@ func (d *TibberDatasource) CheckHealth(_ context.Context, req *backend.CheckHeal
 	src := oauth2.StaticTokenSource(
 		&oauth2.Token{AccessToken: settings.APIKey},
 	)
-	httpClient := oauth2.NewClient(context.Background(), src)
+	httpClient := oauth2.NewClient(context, src)
 
 	client := graphql.NewClient("https://api.tibber.com/v1-beta/gql", httpClient)
+
+	err = client.Query(context, &loggedInUserQuery, nil)
 
 	if rand.Int()%2 == 0 {
 		status = backend.HealthStatusError

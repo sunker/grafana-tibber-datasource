@@ -1,0 +1,40 @@
+{
+  "type": "datasource",
+  "name": "Tibber",
+  "id": "grafana-tibber-datasource",
+  "metrics": true,
+  "backend": true,
+  "executable": "gpx_tibber",
+  "alerting": true,
+  "annotations": true,
+  "includes": [],
+  "info": {
+    "description": "Use Tibber with Grafana",
+    "author": {
+      "name": "Erik Sundell",
+      "url": "https://github.com/sunker/"
+    },
+    "keywords": ["datasource", "tibber"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/grafana/tibber-datasource"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/grafana/tibber-datasource/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=9.0.0",
+    "plugins": []
+  }
+}
