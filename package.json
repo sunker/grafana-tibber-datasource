@@ -1,0 +1,29 @@
+{
+  "name": "grafana-tibber-datasource",
+  "version": "1.0.0",
+  "description": "A Grafana data source plugin for Tibber",
+  "scripts": {
+    "build": "grafana-toolkit plugin:build",
+    "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
+    "watch": "grafana-toolkit plugin:dev --watch",
+    "sign": "grafana-toolkit plugin:sign",
+    "start": "yarn watch"
+  },
+  "author": "Erik Sundell",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@grafana/data": "latest",
+    "@grafana/experimental": "^0.0.2-canary.31",
+    "@grafana/runtime": "latest",
+    "@grafana/toolkit": "latest",
+    "@grafana/ui": "latest",
+    "@types/lodash": "latest"
+  },
+  "resolutions": {
+    "rxjs": "7.3.0"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
